@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+#gameContainer{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #36393E;
+ 
+}
+
+
+#start-game-btn{
+    position: relative;
+    font-size: 30px;
+    padding:15px 40px;
+    cursor: pointer;
+    border-radius: 100px;
+    text-transform: uppercase;
+    transition: all .2s;
+    border: none;
+    color: white;
+    background-color: #55C57A;
+    z-index: 10;
+}
+
+#start-game-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.205);
+     }
+
+     #start-game-btn:hover::before {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0; }
+
+     #start-game-btn::before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    background-color: #55C57A;
+     }
+
+/* #player{
+} */
+/* 
+#computer{
+    background-color: red;
+    width: 100px;
+    height:100px;
+} */
+
+
+#playerImg{
+    width: 300px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #playerImg {
+      width:200px
+    }
+  }
+
+.playerImgAnimation{
+    animation: Shoot 1s ease-in 4;
+}
+
+#computerImg{
+    width:300px;
+    
+}
+
+@media only screen and (max-width: 1200px) {
+    #computerImg {
+      width:200px
+    }
+  }
+  
+
+.computerImgAnimation{
+    animation: ShootC 1s ease-in 4;
+}
+
+#buttonAndTimerContainer{
+    margin-top: 100px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+#timer{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+
+.disappear{
+    opacity: 0;
+    
+}
+
+@keyframes Shoot{
+    0%{transform: translateY(0);}
+    50%{transform: rotate(-50deg) translateY(-100px);}
+    100%{transform: rotate(0deg) translateY(0);}
+
+
+}
+
+@keyframes ShootC{
+    0%{transform: translateY(0);}
+    50%{transform: rotate(50deg) translateY(-100px);}
+    100%{transform: rotate(0deg) translateY(0);}
+
+
+}
+
